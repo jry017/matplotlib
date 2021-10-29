@@ -16,7 +16,7 @@ def moving_average(x, w):
 
 # CSV leser; åpner og leser filen, og deretter setter dem i
 # arrays via en for løkke
-with open(r"csv_good") as csvfile:
+with open(r"csv_fing") as csvfile:
     plots = csv.reader(csvfile, delimiter=',')
     for row in plots:
         x.append(float(row[0]))
