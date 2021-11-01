@@ -16,7 +16,7 @@ def moving_average(x, w):
 
 # CSV leser; åpner og leser filen, og deretter setter dem i
 # arrays via en for løkke
-with open(r"csv_fing") as csvfile:
+with open(r"csv(75)") as csvfile:
     plots = csv.reader(csvfile, delimiter=',')
     for row in plots:
         x.append(float(row[0]))
@@ -38,7 +38,10 @@ plt.xlabel('Tid (ms)')
 plt.ylabel('Spenning', color="blue")
 
 # Viser utsnitt av målingene på y-aksen
-plt.ylim([0.0057, 0.0071])
+plt.ylim([0.0085, 0.009])
+
+# viser utsnitt av tidsmålingene
+plt.xlim(10000, 20000)
 
 # Lager en ekstra y-akse på høyresiden til temperaturmålingene
 axe2 = plt.twinx()
@@ -55,7 +58,7 @@ plt.title('Fotopletysmograf')
 BPM = 'Slag per minutt: ' + str(int((len(peaks[0])) / (x[-1] / 1000) * 60))
 
 # Setter opp en fylt, farget tekstboks
-plt.text(7500, 0.3, BPM,
+plt.text(14000, 0.2, BPM,
          bbox=dict(boxstyle="square",
                    ec=(0.015, 0.239, 0.964),
                    fc=(0.588, 0.678, 0.972),
